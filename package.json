@@ -1,0 +1,50 @@
+{
+  "name": "quantic-studio-canva",
+  "productName": "Quantic Studio Canva",
+  "version": "1.0.0",
+  "description": "Canvas de geração de vídeo por nós — Atlas Cloud + APIVerse",
+  "author": "QuanticLab Studio",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64",
+    "release": "electron-builder --win --x64 --publish always"
+  },
+  "dependencies": {
+    "electron-updater": "6.3.9"
+  },
+  "devDependencies": {
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "studio.quantic.canva",
+    "productName": "Quantic Studio Canva",
+    "copyright": "© QuanticLab Studio",
+    "directories": { "output": "dist", "buildResources": "build" },
+    "files": ["main.js", "preload.js", "renderer/**", "build/icon.ico", "package.json"],
+    "asar": true,
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "icon": "build/icon.ico",
+      "artifactName": "QuanticStudioCanva-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Quantic Studio Canva",
+      "deleteAppDataOnUninstall": false
+    },
+    "publish": [{
+      "provider": "github",
+      "owner": "SEU_USUARIO_GITHUB",
+      "repo": "quantic-studio-canva",
+      "releaseType": "release"
+    }]
+  }
+}
