@@ -42,7 +42,7 @@
     },
     "publish": [{
       "provider": "github",
-      "owner": "SEU_USUARIO_GITHUB",
+      "owner": "djjrviber",
       "repo": "quantic-studio-canva",
       "releaseType": "release"
     }]
